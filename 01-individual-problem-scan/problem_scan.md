@@ -90,7 +90,7 @@ FUTURE STATE — 10–20 phút/ngày
 → [5 AI (hoặc PM) update ticket Jira/Notion: 2']
 
 Fallback: AI có khả năng sẽ extract sai owner/context → PM vẫn phải mất thời gian tự điền lại trước khi gửi.
--> Workflow Hiện tại chưa được tối ưu nhưng thời gian đã giảm được khoảng ~30%
+-> Workflow Hiện tại chưa được tối ưu nhưng thời gian đã giảm được khoảng ~50%
 ```
 
 ## Problem Card #2 — Tìm kiếm & tóm tắt tài liệu nội bộ phân tán

@@ -28,13 +28,13 @@ Minh scan 8 problems, vượt mức tối thiểu 5.
 ## Problem Card #1 — Daily standup synthesis & action item tracking
 
 **Problem 1 câu:**
-Mỗi ngày PM và Dev mất 30–60 phút chỉ để đồng bộ tiến độ sprint, manual note action items, và update lại vào Jira/Notion — lặp đi lặp lại mà không có giá trị thêm.
+Mỗi ngày PM và Dev mất 30–60 phút chỉ để tranh luận và đồng bộ tiến độ sprint, manual note action items, và update lại vào Jira/Notion, xem xét nếu tiến độ hiện tại kịp golive đợt tới -> những process lặp đi lặp lại mà không có giá trị thêm.
 
 **Actor:**
 PM, Dev (toàn bộ team sprint)
 
 **Thời điểm / bối cảnh:**
-Hằng ngày, đầu giờ sáng hoặc cuối ngày — bối cảnh standup/sync định kỳ trong sprint Agile.
+Hằng ngày, đầu giờ sáng, chiều hoặc cuối ngày + bối cảnh standup/sync định kỳ trong sprint Agile.
 
 **Current workflow:**
 
@@ -48,7 +48,7 @@ Hằng ngày, đầu giờ sáng hoặc cuối ngày — bối cảnh standup/sy
 ```
 
 **Bottleneck:**
-Không có structured capture trong lúc meeting → PM phải dành 10–20 phút sau meeting để viết lại recap + update ticket. Thông tin dễ bị miss hoặc sai owner/deadline. Việc sync tiến độ tốn nhiều cognitive load không cần thiết.
+Không có structured capture trong lúc meeting → PM phải dành 10–20 phút sau meeting để viết lại recap + update ticket. Thông tin dễ bị miss hoặc sai owner/deadline. Việc sync tiến độ tốn nhiều cognitive load không cần thiết + Vị trí sắp xếp tài liệu hỗn loạn.
 
 **Impact:**
 30–60 phút/ngày × số ngày sprint = 300–600 phút/sprint bị dùng cho coordination thuần túy. Action items bị miss hoặc trễ vì thiếu structured tracking.
@@ -63,18 +63,18 @@ Standup template cố định (what I did / doing / blocked) + bot tự động 
 AI transcribe + extract structured output từ meeting audio/transcript: ai nói gì, blocker là gì, action item là gì, owner là ai, deadline là bao giờ. Sau đó auto-push vào Jira/Notion/Slack recap. PM chỉ cần review 2 phút.
 
 **Quick gut:**
-Workflow — nhưng cần validate xem AI extract đúng owner/deadline/context không, và team có trust output đủ để không re-check manually không.
+Workflow —> nhưng cần validate xem AI extract đúng owner/deadline/context không, và team có trust output đủ để không re-check manually không.
 
 ## Problem Card #2 — Tìm kiếm & tóm tắt tài liệu nội bộ phân tán
 
 **Problem 1 câu:**
-Dev và PM mất nhiều thời gian tìm kiếm tài liệu nội bộ nằm rải rác trên Notion, Confluence, Google Drive, Slack — không biết tài liệu nào đúng, mới nhất, hay còn được dùng.
+Dev và PM mất nhiều thời gian tìm kiếm tài liệu nội bộ nằm rải rác trên Notion, Confluence, Google Drive, Slack, đặc biệt là những nhân viên mới onboard không biết tài liệu nào đúng, mới nhất, hay còn được dùng.
 
 **Actor:**
 Dev (onboarding, debug, implementation reference), PM (spec lookup, decision history), toàn bộ team kỹ thuật
 
 **Thời điểm / bối cảnh:**
-Xảy ra liên tục trong ngày — mỗi khi cần tra cứu spec, API doc, quyết định thiết kế cũ, hoặc onboard thành viên mới vào codebase/product context.
+Xảy ra liên tục trong ngày. Mỗi khi cần tra cứu spec, API doc, quyết định thiết kế cũ, hoặc onboard thành viên mới vào codebase/product context.
 
 **Current workflow:**
 
@@ -105,16 +105,44 @@ AI index toàn bộ tài liệu nội bộ (Notion, Drive, Confluence, Slack) v�
 **Quick gut:**
 Workflow —> nhưng độ khó implementation cao hơn Problem #1 do phụ thuộc vào chất lượng tài liệu đầu vào và cần giải quyết version conflict trước khi retrieval mới thực sự hữu ích.
 
+### Draft current
+
+```text
+CURRENT STATE — 30–60 phút/ngày
+
+[1 Mở meeting: 5']
+→ [2 Từng người đọc update: 15–25']
+→ [3 PM mental-note / ghi tay action items: 5–10']  <-- dễ miss, sai owner
+→ [4 Sau meeting: PM manually type recap + update Jira/Notion: 10–20']  <-- bottleneck
+→ [5 Gửi recap lên Slack channel: 5']
+→ [6 Check lại cuối ngày xem ai done chưa: 5–10']
+```
+
+### Draft future workflow
+
+```text
+FUTURE STATE — 10–20 phút/ngày
+
+[1 Meeting diễn ra bình thường: 15–20']
+→ [2 AI transcribe + extract structured output: 1']  <-- owner, deadline, blocker, action item
+→ [3 AI auto-generate recap + push lên Slack: 1']
+→ [4 PM review + sửa nếu cần: 3–5']  <-- human boundary
+→ [5 AI (hoặc PM) update ticket Jira/Notion: 2']
+
+Fallback: AI có khả năng sẽ extract sai owner/context → PM vẫn phải mất thời gian tự điền lại trước khi gửi.
+-> Workflow Hiện tại chưa được tối ưu
+```
+
 ## Problem Card #3 — Review & bàn giao phụ thuộc quá nhiều vào reviewer
  
 **Problem 1 câu:**
-Code review bị bottleneck bởi reviewer quá tải — PR nằm chờ 1–2 ngày, lỗi convention và thiếu test case vẫn lọt qua, và bàn giao giữa các Dev mất nhiều thời gian giải thích context.
+Code review bị bottleneck bởi reviewer quá tải hoặc tự delay do các vấn đề phát sinh khiến PR nằm chờ 1–2 ngày, lỗi convention và thiếu test case vẫn lọt qua, và bàn giao giữa các Dev mất nhiều thời gian giải thích context.
  
 **Actor:**
 Dev (author PR), Senior Dev / Tech Lead (reviewer), PM (theo dõi tiến độ bị block)
  
 **Thời điểm / bối cảnh:**
-Cuối mỗi task hoặc feature — khi Dev mở PR và chờ review trước khi merge. Cũng xảy ra khi bàn giao task giữa các thành viên trong sprint.
+Cuối mỗi task hoặc feature, thời điểm khi Dev mở PR và chờ review trước khi merge. Cũng xảy ra khi bàn giao task giữa các thành viên trong sprint.
  
 **Current workflow:**
  
@@ -147,3 +175,8 @@ AI đọc diff của PR, đối chiếu với codebase hiện tại, và tự đ
 Workflow —> nhưng giá trị thực phụ thuộc vào khả năng AI hiểu đủ codebase context, và dev có chấp nhận comment từ AI như comment từ teammate không.
 
 ## Problem Cards #2 và #3 — tóm tắt
+
+| Card | Actor | Bottleneck | Metric | Quick gut | Vì sao chưa chọn làm #1 |
+|---|---|---|---|---|---|
+| Tìm kiếm tài liệu nội bộ | Dev, PM, toàn team kỹ thuật | Tài liệu phân tán nhiều platform, không biết bản nào mới nhất, phải hỏi teammate | 20–80 phút/người/ngày → dưới 2 phút/lần tra cứu | Workflow | Retrieval chỉ tốt khi tài liệu đầu vào có hygiene — cần điều kiện tiên quyết về doc convention trước khi AI phát huy được |
+| Review & bàn giao | Dev (author), Senior Dev / Tech Lead (reviewer) | PR nằm chờ 1–2 ngày, reviewer quá tải, lỗi cơ bản lọt qua, bàn giao thiếu context | PR chờ 2–6 ngày/feature → dưới 4 giờ cho lỗi cơ bản | Workflow | Trust của Dev với AI comment chưa được validate; "review" và "bàn giao" là hai sub-problem cần tách — scope còn rộng để ship an toàn |

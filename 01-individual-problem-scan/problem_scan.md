@@ -145,3 +145,5 @@ AI đọc diff của PR, đối chiếu với codebase hiện tại, và tự đ
  
 **Quick gut:**
 Workflow —> nhưng giá trị thực phụ thuộc vào khả năng AI hiểu đủ codebase context, và dev có chấp nhận comment từ AI như comment từ teammate không.
+
+## Problem Cards #2 và #3 — tóm tắt

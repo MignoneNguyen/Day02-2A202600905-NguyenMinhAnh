@@ -65,6 +65,34 @@ AI transcribe + extract structured output từ meeting audio/transcript: ai nói
 **Quick gut:**
 Workflow —> nhưng cần validate xem AI extract đúng owner/deadline/context không, và team có trust output đủ để không re-check manually không.
 
+### Draft current
+
+```text
+CURRENT STATE — 30–60 phút/ngày
+
+[1 Mở meeting: 5']
+→ [2 Từng người đọc update: 15–25']
+→ [3 PM mental-note / ghi tay action items: 5–10']  <-- dễ miss, sai owner
+→ [4 Sau meeting: PM manually type recap + update Jira/Notion: 10–20']  <-- bottleneck
+→ [5 Gửi recap lên Slack channel: 5']
+→ [6 Check lại cuối ngày xem ai done chưa: 5–10']
+```
+
+### Draft future workflow
+
+```text
+FUTURE STATE — 10–20 phút/ngày
+
+[1 Meeting diễn ra bình thường: 15–20']
+→ [2 AI transcribe + extract structured output: 1']  <-- owner, deadline, blocker, action item
+→ [3 AI auto-generate recap + push lên Slack: 1']
+→ [4 PM review + sửa nếu cần: 3–5']  <-- human boundary
+→ [5 AI (hoặc PM) update ticket Jira/Notion: 2']
+
+Fallback: AI có khả năng sẽ extract sai owner/context → PM vẫn phải mất thời gian tự điền lại trước khi gửi.
+-> Workflow Hiện tại chưa được tối ưu nhưng thời gian đã giảm được khoảng ~30%
+```
+
 ## Problem Card #2 — Tìm kiếm & tóm tắt tài liệu nội bộ phân tán
 
 **Problem 1 câu:**
@@ -104,34 +132,6 @@ AI index toàn bộ tài liệu nội bộ (Notion, Drive, Confluence, Slack) v�
 
 **Quick gut:**
 Workflow —> nhưng độ khó implementation cao hơn Problem #1 do phụ thuộc vào chất lượng tài liệu đầu vào và cần giải quyết version conflict trước khi retrieval mới thực sự hữu ích.
-
-### Draft current
-
-```text
-CURRENT STATE — 30–60 phút/ngày
-
-[1 Mở meeting: 5']
-→ [2 Từng người đọc update: 15–25']
-→ [3 PM mental-note / ghi tay action items: 5–10']  <-- dễ miss, sai owner
-→ [4 Sau meeting: PM manually type recap + update Jira/Notion: 10–20']  <-- bottleneck
-→ [5 Gửi recap lên Slack channel: 5']
-→ [6 Check lại cuối ngày xem ai done chưa: 5–10']
-```
-
-### Draft future workflow
-
-```text
-FUTURE STATE — 10–20 phút/ngày
-
-[1 Meeting diễn ra bình thường: 15–20']
-→ [2 AI transcribe + extract structured output: 1']  <-- owner, deadline, blocker, action item
-→ [3 AI auto-generate recap + push lên Slack: 1']
-→ [4 PM review + sửa nếu cần: 3–5']  <-- human boundary
-→ [5 AI (hoặc PM) update ticket Jira/Notion: 2']
-
-Fallback: AI có khả năng sẽ extract sai owner/context → PM vẫn phải mất thời gian tự điền lại trước khi gửi.
--> Workflow Hiện tại chưa được tối ưu
-```
 
 ## Problem Card #3 — Review & bàn giao phụ thuộc quá nhiều vào reviewer
  

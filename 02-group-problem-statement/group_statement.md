@@ -1,5 +1,10 @@
 # 02 — Group Problem Statement
 
+## Danh sách các thành viên:
+- Nguyễn Minh Anh
+- Đặng Sĩ Tiến
+- Nguyễn Bạch Hải Đăng
+
 ## Group convergence
 
 Nhóm 3-4 người, mỗi người share top 3. Tổng cộng khoảng 9-12 candidates.
@@ -24,14 +29,13 @@ Nhóm 3-4 người, mỗi người share top 3. Tổng cộng khoảng 9-12 cand
 | Tổng hợp nội dung họp daily/standup + action items + sync tiến độ sprint | 5 | 3 | 5 | 4 | 4 | 3 | 5 | 29 |
 | Giáo viên IELTS chấm bài mất thời gian | 5 | 4 | 5 | 4 | 4 | 4 | 5 | 31 |
 
-
-Nhóm chọn: **IELTS Writing Scoring**.
+-> Nhóm chọn: **IELTS Writing Scoring**.
 
 Vì sao chọn:
 
 - Workflow rõ ràng và không phức tạp
-- Impact to
-- Có nhiều benchmark/ mẫu criteria đánh giá chính thức (Các đầu điểm đánh giá bài Writing )
+- Impact to và có tính khả thi
+- Có nhiều benchmark/ mẫu criteria đánh giá chính thức (Đầy đủ các đầu điểm/ benchmark đánh giá bài Writing Task 1 và 2 )
 
 
 ## Research giải pháp
@@ -57,29 +61,29 @@ Nội dung workflow:
 CURRENT STATE — 4 bước, 30 phút
 
 ┌───────────────────────────────────┐
-│ 1. Đọc toàn bộ bài                		      │  ~5–10 phút
-│    Nắm ý tưởng, cấu trúc                          │  ← BOTTLENECK
+│ 1. Đọc toàn bộ bài                │  ~5–10 phút
+│    Nắm ý tưởng, cấu trúc          │  ← BOTTLENECK
 └──────────────────┬────────────────┘
                                     │
                                     ▼
 ┌───────────────────────────────────┐
-│ 2. Chấm 4 tiêu chí                                    │  ~10–15 phút
-│    TA / CC / LR / GRA                                │  ← BOTTLENECK
+│ 2. Chấm 4 tiêu chí                │  ~10–15 phút
+│    TA / CC / LR / GRA             |   ← BOTTLENECK
 └──────────────────┬────────────────┘
                                     │
                                    ▼
 ┌───────────────────────────────────┐
-│ 3. Viết nhận xét thủ công                         │  ~10–15 phút
-│    Từng lỗi, từng tiêu chí                           │  ← BOTTLENECK
+│ 3. Viết nhận xét thủ công         │  ~10–15 phút
+│    Từng lỗi, từng tiêu chí        |│  ← BOTTLENECK
 └──────────────────┬────────────────┘
                                     │
                                    ▼
 ┌───────────────────────────────────┐
-│ 4. Soát lỗi & kiểm tra nhất quán              │  ~5 phút
+│ 4. Soát lỗi & kiểm tra nhất quán  │  ~5 phút
 └──────────────────┬────────────────┘
-                                    │
-                                   ▼
-                          Gửi feedback
+                    │
+                    ▼
+                Gửi feedback
 
 ────────────────────────────────────────
   Tổng: ~30 phút/bài
@@ -93,37 +97,37 @@ Input prompt và essay
         ▼
 ┌───────────────────────────────────┐
 │ 0. AI phân tích đề bài            │  ~5 giây
-│    Loại đề, yêu cầu, từ khóa     │  ✦ Tự động
+│    Loại đề, yêu cầu, từ khóa      │  ✦ Tự động
 └──────────────────┬────────────────┘
                    │
                    ▼
 ┌───────────────────────────────────┐
 │ 1. AI phân tích bài viết          │  ~5 giây
-│    Cấu trúc, ý tưởng, lập luận   │  ✦ Tự động
+│    Cấu trúc, ý tưởng, lập luận    │  ✦ Tự động
 └──────────────────┬────────────────┘
                    │
                    ▼
 ┌───────────────────────────────────┐
 │ 2. AI đối chiếu bài với đề        │  ~5 giây
-│    Bài có trả lời đúng câu hỏi?  │  ✦ Tự động
+│    Bài có trả lời đúng câu hỏi?   │  ✦ Tự động
 └──────────────────┬────────────────┘
                    │
                    ▼
 ┌───────────────────────────────────┐
-│ 3. AI chấm 4 tiêu chí            │  ~5 giây
+│ 3. AI chấm 4 tiêu chí             │  ~5 giây
 │    TA / CC / LR / GRA             │  ✦ Tự động
 └──────────────────┬────────────────┘
                    │
                    ▼
 ┌───────────────────────────────────┐
 │ 4. AI draft nhận xét              │  ~5 giây
-│    Từng lỗi, từng tiêu chí       │  ✦ Tự động
+│    Từng lỗi, từng tiêu chí        │  ✦ Tự động
 └──────────────────┬────────────────┘
                    │
                    ▼
 ┌───────────────────────────────────┐
-│ 5. Giáo viên review & chỉnh sửa  │  ~3–5 phút
-│    Đảm bảo chất lượng & gửi      │  ← Vẫn cần người
+│ 5. Giáo viên review & chỉnh sửa   │  ~3–5 phút
+│    Đảm bảo chất lượng & gửi       │  ← Vẫn cần người
 └──────────────────┬────────────────┘
                    │
                    ▼
@@ -135,7 +139,18 @@ Input prompt và essay
 ────────────────────────────────────────
 ```
 
-Before/after impact:
+### Before/after impact
+ 
+| Metric | Trước | Sau kỳ vọng | Ghi chú |
+|---|---:|---:|---|
+| Tổng thời gian/bài | 30 phút | ~5 phút | Tiết kiệm ~84% |
+| Tổng thời gian/50 bài | ~25 giờ | ~4 giờ | Giảm 21 giờ công |
+| Số bước | 4 | 6 | Nhiều bước hơn nhưng 5 bước là tự động |
+| Bước thủ công | 4/4 | 1/6 | Chỉ còn giáo viên review cuối |
+| Bottleneck chính | Đọc + chấm + viết nhận xét | Review & chỉnh sửa AI output | Human boundary dịch chuyển |
+| Tốc độ mỗi bước | 5–15 phút/bước | ~5 giây/bước (AI) | 100–180× nhanh hơn ở các bước AI |
+| Risk mới | Không có AI hallucination | Có hallucination risk | Cần giáo viên review trước khi gửi |
+| Yêu cầu kỹ năng mới | Viết nhận xét thủ công | Prompt engineering + critical review | Giáo viên cần biết đánh giá AI output |
 
 ## Problem Statement v0
 
